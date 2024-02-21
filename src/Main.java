@@ -52,7 +52,7 @@ public class Main {
                 }
             } while (!done);
 
-            //cascaded if structure to output acceptable results according to the game
+            //cascaded if structure to output acceptable results according to the game for player A move R
             if(playerA.equalsIgnoreCase("R"))
             {
                 if(playerB.equalsIgnoreCase("R"))
@@ -69,66 +69,43 @@ public class Main {
                 }
             }
 
+            //cascaded if structure to output acceptable results according to the game for player A move P
+            if(playerA.equalsIgnoreCase("P"))
+            {
+                if(playerB.equalsIgnoreCase("P"))
+                {
+                    System.out.println("It's a tie!");
+                }
+                if(playerB.equalsIgnoreCase("R"))
+                {
+                    System.out.println("Paper covers Rock, Player A wins!");
+                }
+                if(playerB.equalsIgnoreCase("S"))
+                {
+                    System.out.println("Scissors cut Paper, Player B wins!");
+                }
+            }
+
+            //cascaded if structure to output acceptable results according to the game for player A move S
+            if(playerA.equalsIgnoreCase("S"))
+            {
+                if(playerB.equalsIgnoreCase("S"))
+                {
+                    System.out.println("It's a tie!");
+                }
+                if(playerB.equalsIgnoreCase("P"))
+                {
+                    System.out.println("Scissors cut Paper, Player A wins!");
+                }
+                if(playerB.equalsIgnoreCase("R"))
+                {
+                    System.out.println("Rock breaks Scissors, Player B wins!");
+                }
+            }
+
             //Prompt to continue
             System.out.println("Do you want to continue [Y/N] ");
             continueYN = in.nextLine();
         } while(continueYN.equalsIgnoreCase("Y"));
     }
 }
-
-//do
-//			output “PlayerA choose your move: [R,P,S]”
-//			input moveA
-//			output “PlayerB choose your move: [R,P,S]”
-//			input moveB
-//				if moveA == “R” then
-//					if moveB == “R” then
-//						output “It’s a tie!”
-//					else if move B == “P” then
-//						output “Paper covers Rock, PlayerB wins!”
-//					else
-//						output “Rock breaks Scissors, PlayerA wins!”
-//					end if
-//				else if moveA == “P” then
-//					if moveB == “P” then
-//						output “It’s a tie!”
-//					else if move B == “S” then
-//						output “Scissors cuts Paper, PlayerB wins!”
-//					else
-//						output “Paper covers Rock, PlayerA wins!”
-//					end if
-//				else if moveA == “S” then
-//					if moveB == “S” then
-//						output “It’s a tie!”
-//					else if move B == “R” then
-//						output “Rock breaks Scissors, PlayerB wins!”
-//					else
-//						output “Scissors cuts Paper, PlayerA wins!”
-//					end if
-//
-//				end if
-//			output “Are you done [Y/N]?”
-//			input doneYN
-//		while NOT doneYN == “Y”
-
-
-//if(playerA.equalsIgnoreCase("R"))
-//            {
-//                if(playerB.equalsIgnoreCase("R"))
-//                {
-//                    System.out.println("It's a tie!");
-//                }
-//                else if(playerB.equalsIgnoreCase("P"))
-//                {
-//                    System.out.println("Paper covers Rock, Player B wins!");
-//                }
-//                else if(playerB.equalsIgnoreCase("S"))
-//                {
-//                    System.out.println("Rock smashes Scissors, Player A wins!");
-//                }
-//                else
-//                {
-//                    trash = in.nextLine();
-//                    System.out.println("Please enter R, P, or S, not " + trash);
-//                }
-//            }
