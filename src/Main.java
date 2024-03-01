@@ -20,11 +20,7 @@ public class Main {
                 //display the moves
                 System.out.println("Player A " + moves);
                 playerA = in.nextLine(); //getting input then cascading if structure for each potential move or invalid move
-                if (playerA.equalsIgnoreCase("R")) {
-                    done = true;
-                } else if (playerA.equalsIgnoreCase("P")) {
-                    done = true;
-                } else if (playerA.equalsIgnoreCase("S")) {
+                if (playerA.equalsIgnoreCase("R") || playerA.equalsIgnoreCase("P") || playerA.equalsIgnoreCase("S")) { // use || for or and condense code
                     done = true;
                 } else {
                     System.out.println("Please enter a valid move: R, P, or S");
@@ -40,11 +36,7 @@ public class Main {
                 //display the moves
                 System.out.println("Player B " + moves);
                 playerB = in.nextLine(); //getting input then cascading if structure for each potential move or invalid move
-                if (playerB.equalsIgnoreCase("R")) {
-                    done = true;
-                } else if (playerB.equalsIgnoreCase("P")) {
-                    done = true;
-                } else if (playerB.equalsIgnoreCase("S")) {
+                if (playerB.equalsIgnoreCase("R") || playerB.equalsIgnoreCase("P") || playerB.equalsIgnoreCase("S")) { // use || for or and condense these bottom lines
                     done = true;
                 } else {
                     System.out.println("Please enter a valid move: R, P, or S");
@@ -59,11 +51,11 @@ public class Main {
                 {
                     System.out.println("It's a tie!");
                 }
-                if(playerB.equalsIgnoreCase("P"))
+                else if(playerB.equalsIgnoreCase("P"))
                 {
                     System.out.println("Paper covers Rock, Player B wins!");
                 }
-                if(playerB.equalsIgnoreCase("S"))
+                else
                 {
                     System.out.println("Rock breaks Scissors, Player A wins!");
                 }
@@ -76,11 +68,11 @@ public class Main {
                 {
                     System.out.println("It's a tie!");
                 }
-                if(playerB.equalsIgnoreCase("R"))
+                else if(playerB.equalsIgnoreCase("R"))
                 {
                     System.out.println("Paper covers Rock, Player A wins!");
                 }
-                if(playerB.equalsIgnoreCase("S"))
+                else
                 {
                     System.out.println("Scissors cut Paper, Player B wins!");
                 }
@@ -93,11 +85,11 @@ public class Main {
                 {
                     System.out.println("It's a tie!");
                 }
-                if(playerB.equalsIgnoreCase("P"))
+                else if(playerB.equalsIgnoreCase("P"))
                 {
                     System.out.println("Scissors cut Paper, Player A wins!");
                 }
-                if(playerB.equalsIgnoreCase("R"))
+                else
                 {
                     System.out.println("Rock breaks Scissors, Player B wins!");
                 }
@@ -105,7 +97,12 @@ public class Main {
 
             //Prompt to continue
             System.out.println("Do you want to continue [Y/N] ");
-            continueYN = in.nextLine();
+            continueYN = in.nextLine(); // make this the same as end of craps
+            if(continueYN.equalsIgnoreCase("Y") || (continueYN.equalsIgnoreCase("N"))){
+                break;
+            } else{
+                System.out.println("Incorrect input: " + continueYN);
+            }
         } while(continueYN.equalsIgnoreCase("Y"));
     }
 }
