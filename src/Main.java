@@ -95,13 +95,15 @@ public class Main {
                 }
             }
 
-            //Prompt to continue
-            System.out.println("Do you want to continue [Y/N] ");
-            continueYN = in.nextLine(); // make this the same as end of craps
-            if(continueYN.equalsIgnoreCase("Y") || (continueYN.equalsIgnoreCase("N"))){
-                break;
-            } else{
-                System.out.println("Incorrect input: " + continueYN);
+            while(true) {
+                //Prompt to continue
+                System.out.println("Do you want to continue [Y/N] ");
+                continueYN = in.nextLine(); // make this the same as end of craps
+                if (continueYN.equalsIgnoreCase("Y") || (continueYN.equalsIgnoreCase("N"))) {
+                    break;
+                } else {
+                    System.out.println("Incorrect input: " + continueYN);
+                }
             }
         } while(continueYN.equalsIgnoreCase("Y"));
     }
